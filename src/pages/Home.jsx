@@ -4,11 +4,7 @@ function Home() {
   return (
     <section className="home-page">
       <div className="home-img">
-        <img
-          src="/content/dam/saudi-tourism/media/see/1920x1080/brand-page-hero.jpg"
-          alt="BG"
-          className="Home-bg-img"
-        />
+        <img src="../images/BG-img.jpg" alt="BG" className="Home-bg-img" />
       </div>
       <div className="social-media-icon">
         <img
@@ -29,7 +25,16 @@ function Home() {
           className="social-icon"
         />
       </div>
-      <div className="home-card"></div>
+      <div className="home-card">
+        <h1>
+          <span>always be</span>
+          <div className="message">
+            <div className="word1">FASHION</div>
+            <div className="word2">PHOTOGRAPY</div>
+            <div className="word3">FOOD</div>
+          </div>
+        </h1>
+      </div>
     </section>
   );
 }
