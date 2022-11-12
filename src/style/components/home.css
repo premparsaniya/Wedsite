@@ -130,3 +130,46 @@ h1 span {
   padding: 30px;
   margin-top: 100px;
 }
+
+/*  */
+.inner {
+  margin: auto;
+  position: relative;
+  height: 200px;
+  width: 200px;
+  border-radius: 60%;
+  background-color: #000;
+}
+.eyes {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100px;
+  text-align: center;
+  border: none;
+}
+.eye {
+  width: 140px;
+  height: 140px;
+  background: #fff;
+  display: inline-block;
+  margin: 40px;
+  border-radius: 50%;
+  position: relative;
+  /*   overflow: hidden; */
+}
+
+.eyeLids {
+  margin-top: -100px;
+}
+
+.ball {
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}

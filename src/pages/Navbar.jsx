@@ -21,6 +21,7 @@ function Navbar() {
       };
     }
   }, [lastScrollY]);
+  
 
   return (
     <>
