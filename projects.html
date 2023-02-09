@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>FANTOM - Final</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+    <!-- Favicons -->
+    <link href="assets/img/Fantom-Logo-.svg" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet" />
+    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet" />
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/fantom-style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+      <img
+        src="assets/img/Side_menu_icon.svg"
+        alt="Menu"
+        class="bi bi-list toggle-sidebar-btn text-black text-black me-3"
+      />
+      <div class="d-flex align-items-center justify-content-around">
+        <a href="dashboard.html" class="logo me-3">
+          <img src="assets/img/Fantom_Logo.svg" alt="Logo" class="h-100 w-100"
+        /></a>
+        <div class="distributor_dropdown">
+          <span class="fs-6 fst-normal fw-normal me-2" style="color: #0e296d"
+            >Distributor</span
+          >
+          <div class="nav-item dropdown">
+            <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+              <img src="assets/img/DropDown_list.svg" alt="List" />
+            </a>
+            <div
+              class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications"
+            >
+              <span class="dropdown-header">// Distributor</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="header-nav ms-auto">
+        <ul class="d-flex align-items-center me-3">
+          <li class="nav-item dropdown p-2 rounded-circle mx-2">
+            <a
+              class="nav-link nav-profile d-flex align-items-center pe-0"
+              href="#"
+              data-bs-toggle="dropdown"
+            >
+              <img
+                src="assets/img/Ball_icon.svg"
+                alt="Profile"
+                class="ball_icon"
+              />
+            </a>
+          </li>
+          <li class="nav-item dropdown pe-3">
+            <a
+              class="nav-link nav-profile d-flex align-items-center pe-0"
+              href="#"
+              data-bs-toggle="dropdown"
+            >
+              <img
+                src="assets/img/Profile_Fk_img.svg"
+                alt="Profile"
+                class="rounded-circle"
+              />
+              <span class="d-none d-md-block dropdown-toggle ps-2"></span>
+            </a>
+
+            <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile px-3" style="width: 180px">
+              <ul class="sidebar-nav" id="sidebar-nav">
+                <li class="nav-item">
+                  <a class="nav-link collapsed" href="profile.html">
+                    <img src="assets/img/Account_UN_icon.svg" alt="Dashboard_icon" />
+                    <span>View Profile</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="projects.html" class="nav-link collapsed">
+                    <img src="assets/img/Logout_icon.svg" alt="Project_icon" />
+                    <span>Log Out</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- ======= Header END ======= -->
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+      <ul class="sidebar-nav" id="sidebar-nav">
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="dashboard.html">
+            <img
+              src="assets/img/Dashboard_icon.svg"
+              alt="Dashboard_icon"
+              style="fill: aqua"
+            />
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="projects.html" class="nav-link_">
+            <img src="assets/img/Project_AC_ic.svg" alt="Project_icon" />
+            <span>Projects</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="Sub-Distributors.html">
+            <img
+              src="assets/img/Sub_Distributors_icon.svg"
+              alt="Sub_Distributors_icon"
+            /><span>Sub Distributors</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="content-distribution.html">
+            <img
+              src="assets/img/Content_distribution_icon.svg"
+              alt="Content_distribution_icon"
+            /><span>Content Distribution</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="censor-labs.html">
+            <img
+              src="assets/img/Censor_labs_icon.svg"
+              alt="Censor_labs_icon"
+            /><span>Censor Labs</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="cloning-agent.html">
+            <img
+              src="assets/img/Cloning_agent_icon.svg"
+              alt="Cloning_agent_icon"
+            /><span>Cloning Agent</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="kdm-requests.html">
+            <img
+              src="assets/img/Kdm_requests_icon.svg"
+              alt="Kdm_requests_icon"
+            /><span>KDM Requests</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="payments.html">
+            <img src="assets/img/Payment_icon.svg" alt="Payment_icon" /><span
+              >Payments</span
+            >
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <!-- End Sidebar-->
+    <!-- Main -->
+    <main id="main" class="main">
+      <div
+        class="d-flex flex-column align-items-center justify-content-center"
+        style="height: 800px"
+      >
+        <img src="assets/img/Add_Project_icon.svg" alt="Blank" />
+        <span class="mt-5" style="color: #8b98bb"
+          >There is no any project added currently. Add your first project
+          here.</span
+        >
+        <a href="projects-creation.html">
+          <button type="submit" class="btn btn-primary px-5 mt-5">
+            + Add Project
+          </button>
+        </a>
+      </div>
+      <!-- <div class="search-bar_box">
+        <div class="search_box"></div>
+        <input type="text" placeholder="Search" />
+      </div> -->
+    </main>
+    <!-- End #main -->
+
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/chart.js/chart.umd.js"></script>
+    <script src="assets/vendor/echarts/echarts.min.js"></script>
+    <script src="assets/vendor/quill/quill.min.js"></script>
+    <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

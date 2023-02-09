@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>FANTOM - Final</title>
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
+  <!-- Favicons -->
+  <link href="assets/img/Fantom-Logo-.svg" rel="icon" />
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet" />
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet" />
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet" />
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet" />
+  <link href="assets/css/style.css" rel="stylesheet" />
+  <link href="assets/css/fantom-style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+    <img src="assets/img/Side_menu_icon.svg" alt="Menu"
+      class="bi bi-list toggle-sidebar-btn text-black text-black me-3" />
+    <div class="d-flex align-items-center justify-content-around">
+      <a href="dashboard.html" class="logo me-3">
+        <img src="assets/img/Fantom_Logo.svg" alt="Logo" class="h-100 w-100" /></a>
+      <div class="distributor_dropdown">
+        <span class="fs-6 fst-normal fw-normal me-2" style="color: #0e296d">Distributor</span>
+        <div class="nav-item dropdown">
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <img src="assets/img/DropDown_list.svg" alt="List" />
+          </a>
+          <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+            <span class="dropdown-header">// Distributor</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center me-3">
+        <li class="nav-item dropdown p-2 rounded-circle mx-2">
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="assets/img/Ball_icon.svg" alt="Profile" class="ball_icon" />
+          </a>
+        </li>
+        <li class="nav-item dropdown pe-3">
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="assets/img/Profile_Fk_img.svg" alt="Profile" class="rounded-circle" />
+            <span class="d-none d-md-block dropdown-toggle ps-2"></span>
+          </a>
+
+          <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile px-3" style="width: 180px">
+            <ul class="sidebar-nav" id="sidebar-nav">
+              <li class="nav-item">
+                <a class="nav-link_" href="profile.html">
+                  <img src="assets/img/Account_icon.svg" alt="Dashboard_icon" />
+                  <span>View Profile</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="projects.html" class="nav-link collapsed">
+                  <img src="assets/img/Logout_icon.svg" alt="Project_icon" />
+                  <span>Log Out</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <!-- ======= Header END ======= -->
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+    <ul class="sidebar-nav" id="sidebar-nav">
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="dashboard.html">
+          <img src="assets/img/Dashboard_icon.svg" alt="Dashboard_icon" style="fill: aqua" />
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="projects.html" class="nav-link collapsed">
+          <img src="assets/img/Project_icon.svg" alt="Project_icon" />
+          <span>Projects</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="Sub-Distributors.html">
+          <img src="assets/img/Sub_Distributors_icon.svg" alt="Sub_Distributors_icon" /><span>Sub Distributors</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="content-distribution.html">
+          <img src="assets/img/Content_distribution_icon.svg" alt="Content_distribution_icon" /><span>Content
+            Distribution</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="censor-labs.html">
+          <img src="assets/img/Censor_labs_icon.svg" alt="Censor_labs_icon" /><span>Censor Labs</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="cloning-agent.html">
+          <img src="assets/img/Cloning_agent_icon.svg" alt="Cloning_agent_icon" /><span>Cloning Agent</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="kdm-requests.html">
+          <img src="assets/img/Kdm_requests_icon.svg" alt="Kdm_requests_icon" /><span>KDM Requests</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="payments.html">
+          <img src="assets/img/Payment_icon.svg" alt="Payment_icon" /><span>Payments</span>
+        </a>
+      </li>
+    </ul>
+  </aside>
+  <!-- End Sidebar-->
+  <!-- Main -->
+  <main id="main" class="main">
+    <div class="pagetitle">
+      <span class="scr_header_title_text">Profile</span>
+    </div>
+    <div class="card-box">
+      <div class="d-flex justify-content-between align-items-center py-4 px-4">
+        <span class="scr_header_title_text">Distributor</span>
+      </div>
+      <!-- Default Tabs -->
+      <ul class="nav nav-tabs px-4" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
+            role="tab" aria-controls="home" aria-selected="true">
+            Overview
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button"
+            role="tab" aria-controls="profile" aria-selected="false">
+            Edit Profile
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button"
+            role="tab" aria-controls="contact" aria-selected="false">Change Password</button>
+        </li>
+      </ul>
+      <div class="bg-white rounded-3 create-project m-0 p-3">
+        <div class="tab-content pt-2" id="myTabContent">
+          <!-- ================================ OverView ================================================= -->
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="p-3">
+              <div class="d-flex align-items-start">
+                <div class="profile_card1 me-3" style="width: 40%;">
+                  <div class="profile_title_ p-4">Personal Info</div>
+                  <div class="p-3">
+                    <div class="d-flex align-items-center px-4 py-2 mb-3">
+                      <div class="Profile_profile me-4">JS</div>
+                      <div class="d-flex flex-column">
+                        <span class="profile_text1 mb-1">John Smith</span>
+                        <div class="profile_distributor">Distributor</div>
+                      </div>
+                    </div>
+                    <div class="exhibitor_card_white">
+                      <div class="mb-3 cpi_text1">Contact Info</div>
+                      <div class="d-flex flex-column mt-4"><span class="cpi_text__">Email Address</span>
+                        <span class="exhibitor_card_text">Aurorafilm@gmail.com</span>
+                      </div>
+                      <div style="border: 1px solid #EAEDF5; margin: 12px 0px;"></div>
+                      <div class="d-flex flex-column "><span class="cpi_text__">Mobile Number</span>
+                        <span class="exhibitor_card_text">+123 456 7890</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="profile_card1" style="width: 50%;">
+                  <div class="profile_title_ p-4">Business Info</div>
+                  <div class="m-3">
+                    <div class="exhibitor_card_white my-2">
+                      <div class="d-flex justify-content-between">
+                        <span class="cpi_text__">Company Name</span>
+                        <span class="exhibitor_card_text">The Galaxy Distributor</span>
+                      </div>
+                    </div>
+                    <div class="exhibitor_card_white my-2">
+                      <div class="d-flex justify-content-between">
+                        <span class="cpi_text__">Conact Person</span>
+                        <span class="exhibitor_card_text">John Smith</span>
+                      </div>
+                    </div>
+                    <div class="exhibitor_card_white my-2">
+                      <div class="d-flex justify-content-between">
+                        <span class="cpi_text__">Contact Number</span>
+                        <span class="exhibitor_card_text">+91 123 456 7890</span>
+                      </div>
+                    </div>
+                    <div class="exhibitor_card_white my-2">
+                      <div class="d-flex justify-content-between">
+                        <span class="cpi_text__">Website</span>
+                        <span class="exhibitor_card_text">www.galaxy.com</span>
+                      </div>
+                    </div>
+                    <div class="exhibitor_card_white my-2">
+                      <div class="d-flex justify-content-between">
+                        <span class="cpi_text__">Address</span>
+                        <span class="exhibitor_card_text">street123, palace rd, mumbai</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ====================================== Edit Profile ======================================== -->
+          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="p-3 overflow-hidden">
+              <div class="d-flex flex-column">
+                <div class="d-flex align-items-start">
+                  <div class="profile_card1 me-3" style="width: 40%;">
+                    <div class="profile_title_ p-4">Personal Info</div>
+                    <div class="px-4 py-3">
+                      <div class="d-flex justify-content-center align-items-center">
+                        <div class="input_flex" style="margin-right: 10px">
+                          <span class="input_label">First Name</span>
+                          <div class="d-flex align-items-center input_box">
+                            <input type="email" placeholder="Enter First Name" class="text-input" />
+                          </div>
+                        </div>
+                        <div class="input_flex" style="margin-left: 10px">
+                          <span class="input_label">Last Name</span>
+                          <div class="d-flex align-items-center input_box">
+                            <input type="email" placeholder="Enter Last Name" class="text-input" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="input_flex">
+                        <span class="input_label">Mobile Number</span>
+                        <div class="d-flex align-items-center input_box">
+                          <input type="email" placeholder="Enter Mobile Number" class="text-input" />
+                        </div>
+                      </div>
+                      <div class="input_flex">
+                        <span class="input_label">Email Address</span>
+                        <div class="d-flex align-items-center input_box">
+                          <input type="email" placeholder="Enter Email Address" class="text-input" />
+                        </div>
+                      </div>
+                      <div>
+                        <span class="input_label">I’ m</span>
+                        <div class="d-flex align-items-center flex-wrap mt-4 mb-3">
+                          <div class="d-flex align-items-center justify-content-between mb-3 mx-2 w-100">
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" />
+                              <label class="form-check-label" for="gridCheck1">
+                                Distributor
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" />
+                              <label class="form-check-label" for="gridCheck1">
+                                Exhibitors
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" />
+                              <label class="form-check-label" for="gridCheck1">
+                                Programmers
+                              </label>
+                            </div>
+                          </div>
+                          <div class="d-flex align-items-center justify-content-between mx-2 w-50">
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" />
+                              <label class="form-check-label" for="gridCheck1">
+                                Labs
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" />
+                              <label class="form-check-label" for="gridCheck1">
+                                Cloning Agents
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="profile_card1" style="width: 60%;">
+                    <div class="profile_title_ p-4">Business Info</div>
+                    <div class="px-4 py-3">
+                      <div class="input_flex">
+                        <span class="input_label">Mobile Number</span>
+                        <div class="d-flex align-items-center input_box">
+                          <input type="email" placeholder="Enter Mobile Number" class="text-input" />
+                        </div>
+                      </div>
+                      <div class="d-flex justify-content-center align-items-center">
+                        <div class="input_flex">
+                          <span class="input_label">Contact Person</span>
+                          <div class="d-flex align-items-center input_box">
+                            <input type="email" placeholder="Enter Name" class="text-input" />
+                          </div>
+                        </div>
+                        <div class="input_flex mx-3">
+                          <span class="input_label">Contact Number</span>
+                          <div class="d-flex align-items-center input_box">
+                            <input type="email" placeholder="Enter Number" class="text-input" />
+                          </div>
+                        </div>
+                        <div class="input_flex">
+                          <span class="input_label">Website</span>
+                          <div class="d-flex align-items-center input_box">
+                            <input type="email" placeholder="Enter Website" class="text-input" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="d-flex justify-content-center align-items-center">
+                        <div class="input_flex">
+                          <span class="input_label">City</span>
+                          <div class="d-flex align-items-center input_box">
+                            <input type="email" placeholder="Enter City" class="text-input" />
+                          </div>
+                        </div>
+                        <div class="input_flex mx-3">
+                          <span class="input_label">State</span>
+                          <div class="d-flex align-items-center input_box">
+                            <input type="email" placeholder="Enter State" class="text-input" />
+                          </div>
+                        </div>
+                        <div class="input_flex">
+                          <span class="input_label">Country</span>
+                          <div class="d-flex align-items-center input_box">
+                            <input type="email" placeholder="Enter Country" class="text-input" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="input_flex">
+                        <span class="input_label">Address</span>
+                        <div class="d-flex align-items-center input_box">
+                          <input type="email" placeholder="Enter Company Name" class="text-input" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex py-4 px-4" style="background: #F8FAFF; margin: 15px -17px -24px -17px; ">
+              <div class="me-2">
+                <div class="col-sm-12">
+                  <button type="" class="btn btn-secondary px-4">Save Details</button>
+                </div>
+              </div>
+              <div class="">
+                <div class="col-sm-12">
+                  <button class="btn btn-primary px-4">
+                    Save & Upload Assests</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ======================================== PassWord =========================================== -->
+          <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+            <div class="profile_card1" style="width: 50%;">
+              <div class="profile_title_ p-4">Password</div>
+              <div class="px-4 py-3">
+                <div class="input_flex">
+                  <span class="input_label">Current Password</span>
+                  <div class="d-flex align-items-center input_box">
+                    <input type="email" placeholder="Enter Password" class="text-input" />
+                  </div>
+                </div>
+                <div class="input_flex">
+                  <span class="input_label">New Password</span>
+                  <div class="d-flex align-items-center input_box">
+                    <input type="email" placeholder="Enter Password" class="text-input" />
+                  </div>
+                </div>
+                <div class="input_flex">
+                  <span class="input_label">Re-enter New Password</span>
+                  <div class="d-flex align-items-center input_box">
+                    <input type="email" placeholder="Enter Password" class="text-input" />
+                  </div>
+                </div>
+                <div style="border: 1px solid #EDECFF;"></div>
+                <div class=" py-3">
+                  <button type="" class="btn btn-primary px-4">Update</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Default Tabs -->
+  </main>
+  <!-- End #main -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.min.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
+
+<!-- <div class="tab-pane fade" id="change" role="tabpanel" aria-labelledby="change-tab">
+  <div class="profile_card1" style="width: 50%;">
+    <div class="profile_title_ p-4">Password</div>
+    <div class="px-4 py-3">
+      <div class="input_flex">
+        <span class="input_label">Current Password</span>
+        <div class="d-flex align-items-center input_box">
+          <input type="email" placeholder="Enter Password" class="text-input" />
+        </div>
+      </div>
+      <div class="input_flex">
+        <span class="input_label">New Password</span>
+        <div class="d-flex align-items-center input_box">
+          <input type="email" placeholder="Enter Password" class="text-input" />
+        </div>
+      </div>
+      <div class="input_flex">
+        <span class="input_label">Re-enter New Password</span>
+        <div class="d-flex align-items-center input_box">
+          <input type="email" placeholder="Enter Password" class="text-input" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
