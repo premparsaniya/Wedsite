@@ -1,0 +1,128 @@
+body::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  overflow: hidden;
+}
+.root-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  color: white;
+}
+
+/* .mt-mb {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+ */
+/* .mt-20 {
+  margin-top: 20px;
+} */
+
+/* .mt {
+  margin-top: 10px;
+} */
+
+/* .mb {
+  margin-bottom: 10px;
+} */
+
+/* .ml {
+  margin-left: 10px;
+}
+
+.mr {
+  margin-right: 10px;
+} */
+
+.d-f {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.d {
+  display: flex;
+}
+.box {
+  border: 1px solid;
+  width: 600px;
+  height: 700px;
+}
+
+.state-button {
+  width: 80px;
+  height: 30px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
+
+.file-msg {
+  width: 22px;
+  height: 20px;  
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;  
+  background-image: url(../assets/svg/FILE_INPUT_ICON.svg);
+}
+.file-msg-input {
+  width: 22px;
+  height: 22px;
+  opacity: 0;    
+  cursor: pointer;
+}
+.chart-container{
+  width: 100%;
+  height: 200px;
+}
+@media only screen and (max-width: 768px) {
+  .root-container {
+    width: 45vh;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .root-container {
+    width: 45vh;
+    height: 110vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .root-container {
+    width: 45vh;
+    height: 125vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .root-container {
+    width: 45vh;
+    height: 145vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  }
+}

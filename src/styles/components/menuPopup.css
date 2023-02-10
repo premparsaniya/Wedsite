@@ -1,0 +1,47 @@
+.main-menu-popup {
+  background-color: rgba(128, 128, 128, 0.576);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+.menu-popup-close-div {
+  width: 100%;
+  height: max-content;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  display: flex;
+  flex-direction: row-reverse;
+  border-bottom: 1px solid #c6c0c058;
+}
+.menu-popup-close {
+  margin-right: 5px;
+}
+.menu-popup-contain {
+  width: 200px;
+  /* height: 650px; */
+  background-color: white;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+.menu-popup-menu-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  margin-right: 10px;
+  /* margin-left: 10px; */
+}
+.menu-popup-contain {
+}
+.menu-popup-title {
+  font-size: 15px;
+}

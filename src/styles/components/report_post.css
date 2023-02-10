@@ -1,0 +1,30 @@
+.reportpost-main {
+  background-color: rgb(128, 128, 128);
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.reportpost-card {
+  height: fit-content;
+  width: 350px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.reportpost-head {
+  padding: 10px;
+  border-bottom: 1px solid #c6c0c058;
+  display: flex;
+}
+.reportpost-head1 {
+  padding: 10px;
+  border-bottom: 1px solid #c6c0c058;
+  display: flex;
+  cursor: pointer;
+}

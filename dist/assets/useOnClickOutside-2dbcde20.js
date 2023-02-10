@@ -1,2 +1,0 @@
-import{r as c}from"./jsx-runtime-911a162d.js";function f(t,s,r,n){const u=c.useRef(s);d(()=>{u.current=s},[s]),c.useEffect(()=>{const e=(r==null?void 0:r.current)??window;if(!(e&&e.addEventListener))return;const o=i=>u.current(i);return e.addEventListener(t,o,n),()=>{e.removeEventListener(t,o,n)}},[t,r,n])}const d=typeof window<"u"?c.useLayoutEffect:c.useEffect;function a(t,s,r="mousedown"){f(r,n=>{const u=t==null?void 0:t.current;!u||u.contains(n.target)||s(n)})}export{a as u};
-//# sourceMappingURL=useOnClickOutside-2dbcde20.js.map

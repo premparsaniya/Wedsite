@@ -1,0 +1,95 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap"); */
+/* -------------------------- NAV BAR -------------------------- */
+
+.nav-bar {
+  height: 60px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.326);
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.12);
+  z-index: 9;
+  top: 0;
+  left: 0;
+}
+
+.nav-blur {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+  z-index: -1;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.733);
+}
+
+.nav-logo {
+  width: 120px;
+}
+
+.nav-logo1 {
+  width: 50px;
+  height: 45px;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-search {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .nav-search {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .nav-bar {
+    display: flex;
+    justify-content: center;
+  }
+  .nav-logo-div {
+    display: none;
+  }
+
+  .nav-logo1 {
+    display: none;
+  }
+}
+
+.nav-logo-div {
+  text-align: right;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.nav-icons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navbar__icon {
+  cursor: pointer;
+  height: 25px;
+  width: 25px;
+  object-fit: contain;
+}
+
+.nav-btn {
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px;
+}

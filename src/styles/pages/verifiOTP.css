@@ -1,0 +1,110 @@
+.box-vo {
+    border: 1px solid;
+    width: 500px;
+    height: 480px;
+   
+  }
+  
+  .vo-text {
+   
+    text-align: center;
+    width: 370px;
+    font-size: 15px;
+    color: rgba(171, 171, 171, 0.95);
+  }
+  
+  .vo-insta-logo {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .logo-vo {
+    width: 80px;
+    height: 80px;
+  }
+  .vo-heading-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    height: 85px;
+  }
+  .vo-text-heading {
+  
+    text-align: center;
+    font-weight: 600;
+    margin-top: 0;
+    font-size: 1.4rem;
+  }
+  .vo-input-div {
+    height: 215px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+  }
+  .btn-vo {
+      width: 325px;
+      height: 30px;
+      background-color: #a0a0a0;
+      border-radius: 5px;
+      border: 0;
+      color: #f0ffff;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .btn-vo-ac {
+      width: 325px;
+      height: 30px;
+      border-radius: 5px;
+      border: 0;
+      background-color: #000000;
+      color: white;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+  .vo-back {
+   
+    text-decoration: none;
+    border: 0;
+  }
+  .vo-under-box {
+    border: 1px solid;
+    margin-top: 20px;
+    width: 500px;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .vo-error-box{
+      color: rgb(255, 0, 0);
+      margin-bottom: 710px;
+      position: absolute;
+      border: 1px solid;
+      margin-top: 20px;
+      width: 500px;
+      text-align: center; 
+  }
+
+
+
+
+  @media only screen and (max-width: 768px) {
+    .box-vo{
+      border: none;
+    }
+    .vo-under-box {
+      border: 1px solid;
+      margin-top: 20px;
+      width: 320px;
+      height: 5vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+  }

@@ -1,0 +1,84 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+@media only screen and (max-width: 768px) {
+  body {
+    margin: 0px;
+    padding: 0px;
+  }
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  /* -webkit-box-shadow: 0 0 0px 1000px #1b1b6c inset; */
+  background-color: #1b1b6c;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap'); */
+/* @layer base {
+  h1 {@apply text-2xl;}
+  h2 {@apply text-xl;}
+} */
+
+@layer components {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  .primary-btn {
+    @apply font-lato relative disabled:bg-slate-300 select-none inline-flex items-center justify-center px-12 py-2 shadow-lg text-lg text-white transition-all duration-200 border border-neutral-800 rounded-lg cursor-pointer bg-black active:bg-slate-700 active:scale-[.98];
+  }
+  .primary-btn-sm {
+    @apply relative select-none inline-flex items-center justify-center px-8 py-1 whitespace-nowrap shadow-lg text-sm text-white transition-all duration-200 border border-neutral-800 rounded-lg cursor-pointer bg-black active:bg-slate-700 active:scale-[.98];
+  }
+  .primary-rounded-btn {
+    @apply flex flex-row items-center justify-center bg-black p-3 rounded-full disabled:bg-slate-300 select-none transition-all duration-200 cursor-pointer active:bg-slate-700 active:scale-[.98];
+  }
+  .secondary-btn {
+    @apply select-none px-4 py-2 text-sm bg-white rounded-xl border transition-colors duration-150 ease-linear border-gray-200 text-black active:outline-none active:ring-0 font-bold hover:bg-gray-50 active:bg-indigo-50 active:text-indigo-900;
+  }
+  .transparent-btn {
+    @apply font-lato relative disabled:bg-slate-300 select-none inline-flex items-center justify-center px-2 py-2 shadow-md text-lg text-black transition-all duration-200 rounded-lg cursor-pointer bg-transparent active:scale-[.98];
+  }
+  .transparent-secondary-btn {
+    @apply text-[14px] md:text-lg font-boldLato text-black break-all select-none px-4 py-2 rounded-xl hover:border transition-colors duration-150 ease-linear border border-transparent hover:border-gray-200 active:outline-none active:ring-0 font-bold active:bg-gray-50;
+  }
+  .radio-comp {
+    @apply accent-black focus:ring-0 rounded-full w-5 h-5 bg-black text-black border-gray-300 checked:bg-black checked:border-black focus:outline-none transition duration-700 bg-center bg-contain float-left cursor-pointer;
+  }
+  .radio-label {
+    @apply font-lato font-semibold inline-block select-none cursor-pointer ml-2 text-sm text-black;
+  }
+  .tag-btn {
+    @apply font-lato relative disabled:bg-slate-300 select-none inline-flex items-center justify-center px-8 py-[4%] shadow-sm text-lg text-black transition-all duration-200 rounded-2xl cursor-pointer bg-white active:scale-[.96] border-black border-2;
+  }
+  .tag-div {
+    @apply font-lato relative disabled:bg-slate-300 select-none inline-flex items-center justify-center px-[10%] py-[4%] shadow-sm text-lg text-black transition-all duration-200 rounded-2xl cursor-pointer bg-white border-black border-2;
+  }
+  .absolute-ctr {
+    @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+  }
+  .change-net-btn {
+    @apply flex items-center justify-center w-full px-3 py-5 text-center border-gray-300 cursor-pointer select-none bg-gray-50 hover:bg-gray-100 active:bg-gray-200 text-black;
+  }
+}
+
+/* @layer utilities {
+  .filter-none {
+    filter: none;
+  }
+  .filter-grayscale {
+    filter: grayscale(100%);
+  }
+} */

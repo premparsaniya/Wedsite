@@ -1,0 +1,261 @@
+.CP-main {
+  background-color: #c5c2c2ba;
+  height: 100vh;
+  width: 100vw;
+  /* overflow: hidden; */
+  /* margin-top:6vh; */
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 100;
+}
+
+.CP-close {
+  /* width: 100%; */
+  text-align: right;
+  /* padding-right: 200px; */
+  margin-top: 30px;
+  margin-left: 1800px;
+  /* display: flex; */
+  /* justify-content: flex-end; */
+  /* background-color:red; */
+  z-index: 10;
+}
+
+.CP-box {
+  width: 90%;
+  margin-top: 70px;
+  background-color: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  /* position: relative; */
+  /* z-index: 6; */
+}
+
+.CP-New {
+  height: 45px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  border-bottom: 2px solid #c5bfbf58;
+}
+
+.cp-close-img {
+  background-color: rgba(0, 0, 0, 0.438);
+  height: 40px;
+  width: 40px;
+  border: 1px solid #c6c0c058;
+  position: absolute;
+  margin-top: -716px;
+  margin-left: 758px;
+  border-bottom-left-radius: 40px;
+}
+
+.CP-Arrow {
+  height: 45px;
+  width: 50px;
+}
+
+.CP-Text {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.CP-Share {
+  width: 100px;
+  padding-left: 30px;
+}
+
+.CP-POST {
+  height: 40px;
+  border: 0px;
+  font-size: 1rem;
+  color: rgb(25, 164, 219);
+  background-color: #fff;
+}
+
+.cp-data {
+  height: 700px;
+  width: 100%;
+  display: flex;
+}
+@media (max-width: 500px) {
+  .CP-Text {
+    width: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 900px) {
+  .cp-data {
+    flex-wrap: wrap;
+  }
+  .cp-caption {
+    border-left: 2px solid #c6c0c058;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+  }
+  .cp-img {
+    max-height: 60%;
+  }
+}
+.cp-img {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+  position: relative;
+}
+
+.cp-caption {
+  border-left: 2px solid #c6c0c058;
+  width: 100%;
+}
+
+.cp-sel-img {
+  font-size: 1.2rem;
+  /* color: #c6c0c058; */
+  /* z-index: ; */
+}
+
+::-webkit-file-upload-button {
+  opacity: 0.5;
+  font-size: 2rem;
+  color: rgb(0, 0, 0);
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-color: #000;
+  box-shadow: 100px 50px 50px 60px rgba(133, 131, 131, 0.25);  
+}
+
+.cp-u {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  padding-left: 20px;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 2px solid #c6c0c058;
+  border-top: 2px solid #c6c0c058;
+}
+
+.cp-UIcon {
+  width: 50px;
+  align-items: center;
+}
+
+.cp-UName {
+  align-items: center;
+  height: 50px;
+  display: flex;
+  width: 100%;
+  font-size: 1.4rem;
+}
+
+.cp-cap {
+  border-bottom: 2px solid #c6c0c058;
+  /* height: 500px; */
+}
+
+.cp-inp-cap {
+  font-size: 1.2rem;
+  border: 0px;
+  padding: 10px;
+  resize: none;
+  height: 100%;
+  width: 100%;
+}
+
+.cp-inp-cap:focus,
+.cp-inp-title:focus {
+  outline: none;
+}
+
+.cp-text-num {
+  text-align: right;
+  padding-right: 20px;
+  width: 380px;
+  font-size: 1rem;
+  color: #b8b0b0e9;
+  /* opacity: 0.4; */
+  /* background-color: chartreuse; */
+}
+
+.cp-text-num:hover {
+  color: black;
+}
+
+.cp-img-filter {
+  /* background-color:grey; */
+  height: 300px;
+}
+
+.fil-img {
+  height: 90px;
+  width: 90px;
+  margin: 5px;
+  /* filter: blur(0px); */
+}
+
+.cp-slide-container {
+  /* background-color: aqua; */
+  display: flex;
+  font-size: 1rem;
+}
+
+.cp-slider {
+  width: 300px;
+  /* background-color: #d02f2fe9; */
+}
+
+.volume-btn {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  color: #6b6b6b86;
+  cursor: pointer;
+  z-index: 5;
+  bottom: 15px;
+  right: 10px;
+  padding: 0 10px 10px 0;
+}
+.cp-back-arr {
+  margin-right: 10px;
+  padding: 5px;
+  cursor: pointer;
+}
+.cp-audio-title {
+  font-size: 18px;
+}
+.add-audio{
+  color: rgb(25, 164, 219);
+}
+.cp-audio-div {
+  height: 750px;
+  width: 100%;
+  overflow: hidden;
+}
+.audio-listing-div {
+  padding: 0;
+}
+.audio-map-div {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto auto 10px auto;
+  border-bottom: 1px solid #c6c0c058;
+}
+.audio-play-btn-dic {
+  display: flex;
+}
