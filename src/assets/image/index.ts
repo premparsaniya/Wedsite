@@ -8,7 +8,7 @@ import STATE404 from '../svg/STATE404.svg';
 
 /*--- PNG Files ---*/
 import arrow from './arrow.svg';
-import DefaultImg from './sample_default.webp';
+import DefaultImg from './STATE_image/sample_default.jpeg';
 import cameraLogo from './cameraLogo.svg';
 export {
     Save, DefaultImg, Like, Chat, InstaLogo,

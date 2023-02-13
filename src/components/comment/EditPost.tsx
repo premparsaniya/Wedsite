@@ -158,7 +158,7 @@ const EditPost = ({ setEdtPostMenu, postData, setPostPopup = () => { }, /* onClo
     formDataNew.append("description", caption);
     formDataNew.append("user_id", user?.data.user_id);
 
-    fetch(`${import.meta.env.VITE_API_URL}post`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}post`, {
       method: "POST",
       headers: {
         version: "1.0.0",
@@ -198,7 +198,7 @@ const EditPost = ({ setEdtPostMenu, postData, setPostPopup = () => { }, /* onClo
       user_id: user.data.user_id,
       user_2: id,
     };
-    fetch(`${import.meta.env.VITE_API_URL}post`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}post`, {
       method: "POST",
       headers: {
         accept: "application/json",

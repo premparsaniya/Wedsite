@@ -19,10 +19,9 @@ function PostList() {
 
   // const [loadMore, setLoadMore] = useState<boolean>(false);
 
-  const [visible, setVisible] = useState<boolean>(false);
   const [toggleDetails, setToggleDetails] = useState<boolean>(false);
   const [postDetailsState, setPostDetailsState] = useState<any>({});
-
+  const [handleGP, setHandleGP] = useState<boolean>(false);
   const [pageNo, setPageNo] = useState<number>(1);
 
   const [mainLoading, setMainLoading] = useState<boolean>(false);
@@ -32,7 +31,7 @@ function PostList() {
 
   useEffect(() => {
     getUserPostList();
-  }, [pageNo]);
+  }, [pageNo, handleGP]);
 
   // console.log("location", location)
   const getUserPostList = () => {
@@ -46,7 +45,7 @@ function PostList() {
       user_2: id,
       all_post: true,
     };
-    fetch(`${import.meta.env.VITE_API_URL}post`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}post`, {
       method: "POST",
       headers: {
         accept: "application/json",
@@ -87,7 +86,7 @@ function PostList() {
       if (loading) return;
       if (intObserver.current) intObserver.current.disconnect();
 
-      intObserver.current = new IntersectionObserver((posts) => {        
+      intObserver.current = new IntersectionObserver((posts) => {
         if (posts[0].isIntersecting && hasNextPage) {
           setPageNo((prev) => prev + 1);
         }
@@ -98,9 +97,9 @@ function PostList() {
     [loading, hasNextPage]
   );
   const showPostDetailsClick = (value: any) => {
-    navigate(`/postdetails/${value?.post_id}`, { state: { value: value } })
-    // setPostDetailsState(value);
-    // setToggleDetails(!toggleDetails);
+    // navigate(`/postdetails/${value?.post_id}`, { state: { value: value } })
+    setPostDetailsState(value);
+    setToggleDetails(!toggleDetails);
   };
 
   return (
@@ -115,6 +114,7 @@ function PostList() {
             ? upost.map((val: any, index) => {
               return upost?.length === index + 1 ? (
                 <GetAllPostContent
+                  key={index}
                   val={val}
                   index={index}
                   showPostDetailsClick={showPostDetailsClick}
@@ -122,6 +122,7 @@ function PostList() {
                 />
               ) : (
                 <GetAllPostContent
+                  key={index}
                   val={val}
                   index={index}
                   showPostDetailsClick={showPostDetailsClick}
@@ -144,17 +145,15 @@ function PostList() {
           className="mb-4 w-full flex justify-center items-center"
         />
       )}
-      {/* {toggleDetails && (
+      {toggleDetails && (
         <PostDetails
           key={postDetailsState?.post_id}
-          visible={visible}
-          onClose={() => {
-            setVisible(!visible), setToggleDetails(!toggleDetails);
-          }}
+          closeToggle={setToggleDetails}
           value={postDetailsState}
-          getPostList={getUserPostList}
+          setHandleGP={setHandleGP}
+          handleGP={handleGP}
         />
-      )} */}
+      )}
     </div>
   );
 }

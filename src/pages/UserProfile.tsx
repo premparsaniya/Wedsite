@@ -73,7 +73,7 @@ const UserProfile = () => {
       user_2: id,
     };
 
-    fetch(`${import.meta.env.VITE_API_URL}profile`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}profile`, {
       method: "POST",
       headers: {
         accept: "application/json",
@@ -124,7 +124,7 @@ const UserProfile = () => {
       user_id: user.data.user_id,
       user_2: id,
     };
-    fetch(`${import.meta.env.VITE_API_URL}post`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}post`, {
       method: "POST",
       headers: {
         accept: "application/json",
@@ -168,7 +168,7 @@ const UserProfile = () => {
         user_2: userItem?.user_id,
       };
 
-      fetch(`${import.meta.env.VITE_API_URL}profile`, {
+      fetch(`${import.meta.env.VITE_PUBLIC_URL}profile`, {
         method: "POST",
         headers: {
           accept: "application/json",
@@ -205,7 +205,7 @@ const UserProfile = () => {
         user_2: userItem?.user_id,
       };
 
-      fetch(`${import.meta.env.VITE_API_URL}profile`, {
+      fetch(`${import.meta.env.VITE_PUBLIC_URL}profile`, {
         method: "POST",
         headers: {
           accept: "application/json",
@@ -242,7 +242,7 @@ const UserProfile = () => {
         user_2: userItem?.user_id,
       };
 
-      fetch(`${import.meta.env.VITE_API_URL}profile`, {
+      fetch(`${import.meta.env.VITE_PUBLIC_URL}profile`, {
         method: "POST",
         headers: {
           accept: "application/json",
@@ -278,7 +278,7 @@ const UserProfile = () => {
         user_id: user?.data?.user_id,
         user_2: userItem?.user_id,
       };
-      fetch(`${import.meta.env.VITE_API_URL}profile`, {
+      fetch(`${import.meta.env.VITE_PUBLIC_URL}profile`, {
         method: "POST",
         headers: {
           accept: "application/json",
@@ -316,7 +316,7 @@ const UserProfile = () => {
           user_2: userItem?.user_id,
         };
 
-        fetch(`${import.meta.env.VITE_API_URL}profile`, {
+        fetch(`${import.meta.env.VITE_PUBLIC_URL}profile`, {
           method: "POST",
           headers: {
             accept: "application/json",
@@ -352,7 +352,7 @@ const UserProfile = () => {
           user_2: userItem?.user_id,
         };
 
-        fetch(`${import.meta.env.VITE_API_URL}profile`, {
+        fetch(`${import.meta.env.VITE_PUBLIC_URL}profile`, {
           method: "POST",
           headers: {
             accept: "application/json",
@@ -821,6 +821,7 @@ const UserProfile = () => {
           value={pDetails}
           closeToggle={setToggleDetails}
           setHandleGP={setHandleGP}
+          handleGP={handleGP}
         />
       )}
       <SharePopup value={userProfile} visible={visibleShare} onClose={setVisibleShare} />

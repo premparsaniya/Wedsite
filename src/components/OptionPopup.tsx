@@ -15,8 +15,9 @@ type Props = {
     chatPostID?: string,
     closeToggle?: (b: boolean) => void,
     setHandleGP?: (b: boolean) => void,
+    handleGP?: boolean,
 }
-const OptionPopup = ({ value, postPopup, setPostPopup, chatPostID, closeToggle = () => false, setHandleGP = () => false }: Props) => {
+const OptionPopup = ({ value, postPopup, setPostPopup, chatPostID, closeToggle = () => false, setHandleGP = () => false, handleGP = false }: Props) => {
 
     const { user } = useSelector((state: App_state) => state.UserLogin);
     const postData = useSelector((s: App_state) => s.PostListReducer);
@@ -58,7 +59,7 @@ const OptionPopup = ({ value, postPopup, setPostPopup, chatPostID, closeToggle =
             post_id: value?.post_id || chatPostID,
         };
         setLoading(true)
-        fetch(`${import.meta.env.VITE_API_URL}post`, {
+        fetch(`${import.meta.env.VITE_PUBLIC_URL}post`, {
             method: "POST",
             headers: {
                 accept: "application/json",
@@ -75,7 +76,7 @@ const OptionPopup = ({ value, postPopup, setPostPopup, chatPostID, closeToggle =
                     setPostPopup(!postPopup);
                     closeToggle(false)
                     // getUserProfile(false)
-                    setHandleGP(true)
+                    setHandleGP(!handleGP)
                     !id && fetchPostData();
                     // chatPostID && navigate(-1);
                     toast.success("post deleted successfully...", { position: "top-center", autoClose: 1000 });
@@ -92,7 +93,7 @@ const OptionPopup = ({ value, postPopup, setPostPopup, chatPostID, closeToggle =
             post_id: value?.post_id || chatPostID,
         };
         setLoading(true)
-        fetch(`${import.meta.env.VITE_API_URL}post`, {
+        fetch(`${import.meta.env.VITE_PUBLIC_URL}post`, {
             method: "POST",
             headers: {
                 accept: "application/json",
@@ -108,7 +109,7 @@ const OptionPopup = ({ value, postPopup, setPostPopup, chatPostID, closeToggle =
                     setHideP(!hideP)
                     setPostPopup(!postPopup);
                     closeToggle(false)
-                    setHandleGP(true)
+                    setHandleGP(!handleGP)
                     // getUserProfile(false)
                     !id && fetchPostData();
                     // chatPostID && navigate(-1);
@@ -126,7 +127,7 @@ const OptionPopup = ({ value, postPopup, setPostPopup, chatPostID, closeToggle =
             blocked_user: value?.user_id,
         };
         setLoading(true)
-        fetch(`${import.meta.env.VITE_API_URL}user`, {
+        fetch(`${import.meta.env.VITE_PUBLIC_URL}user`, {
             method: "POST",
             headers: {
                 accept: "application/json",
@@ -142,7 +143,7 @@ const OptionPopup = ({ value, postPopup, setPostPopup, chatPostID, closeToggle =
                     setBlockUser(!blockUser)
                     setPostPopup(!postPopup);
                     closeToggle(false)
-                    setHandleGP(true)
+                    setHandleGP(!handleGP)
                     // getUserProfile(false)
                     !id && fetchPostData();
                     id && navigate("/");
@@ -162,7 +163,7 @@ const OptionPopup = ({ value, postPopup, setPostPopup, chatPostID, closeToggle =
             user_id: user.data.user_id,
             user_2: id,
         };
-        fetch(`${import.meta.env.VITE_API_URL}post`, {
+        fetch(`${import.meta.env.VITE_PUBLIC_URL}post`, {
             method: "POST",
             headers: {
                 accept: "application/json",
@@ -174,7 +175,7 @@ const OptionPopup = ({ value, postPopup, setPostPopup, chatPostID, closeToggle =
         }).then((result) => {
             result.json().then((response) => {
                 if (response.status === 1) {
-                    dispatch(setPostList(response?.data));                    
+                    dispatch(setPostList(response?.data));
                 }
             });
         });

@@ -45,7 +45,7 @@ const SharePopup: FC<Props> = ({
       blocked_user: value?.user_id,
     };
     setLoading(true)
-    fetch(`${import.meta.env.VITE_API_URL}user`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}user`, {
       method: "POST",
       headers: {
         accept: "application/json",

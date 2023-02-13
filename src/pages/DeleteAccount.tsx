@@ -26,7 +26,7 @@ const DeleteAccount = () => {
       user_id: user?.data?.user_id,
     };
     setLoading(true);
-    fetch(`${import.meta.env.VITE_API_URL}user`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}user`, {
       method: "POST",
       headers: {
         accept: "application/json",

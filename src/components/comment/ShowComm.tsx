@@ -34,7 +34,7 @@ const ShowComm = ({
       user_id: user.data.user_id,
     };
     // console.log("obj---", obj);
-    fetch(`${import.meta.env.VITE_API_URL}post`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}post`, {
       method: "POST",
       headers: {
         accept: "application/json",

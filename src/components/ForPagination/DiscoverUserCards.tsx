@@ -33,7 +33,7 @@ const DiscoverUserCards = forwardRef(({ item, index, isDecibel, userData, goProf
                 user_2: userItem?.user_id,
             };
 
-            fetch(`${import.meta.env.VITE_API_URL}profile`, {
+            fetch(`${import.meta.env.VITE_PUBLIC_URL}profile`, {
                 method: "POST",
                 headers: {
                     accept: "application/json",
@@ -74,7 +74,7 @@ const DiscoverUserCards = forwardRef(({ item, index, isDecibel, userData, goProf
                 user_2: userItem?.user_id,
             };
 
-            fetch(`${import.meta.env.VITE_API_URL}profile`, {
+            fetch(`${import.meta.env.VITE_PUBLIC_URL}profile`, {
                 method: "POST",
                 headers: {
                     accept: "application/json",
@@ -118,7 +118,7 @@ const DiscoverUserCards = forwardRef(({ item, index, isDecibel, userData, goProf
                 user_2: userItem?.user_id,
             };
 
-            fetch(`${import.meta.env.VITE_API_URL}profile`, {
+            fetch(`${import.meta.env.VITE_PUBLIC_URL}profile`, {
                 method: "POST",
                 headers: {
                     accept: "application/json",
@@ -162,7 +162,7 @@ const DiscoverUserCards = forwardRef(({ item, index, isDecibel, userData, goProf
                 user_2: userItem?.user_id,
             };
 
-            fetch(`${import.meta.env.VITE_API_URL}profile`, {
+            fetch(`${import.meta.env.VITE_PUBLIC_URL}profile`, {
                 method: "POST",
                 headers: {
                     accept: "application/json",
@@ -207,7 +207,7 @@ const DiscoverUserCards = forwardRef(({ item, index, isDecibel, userData, goProf
                     user_2: userItem?.user_id,
                 };
 
-                fetch(`${import.meta.env.VITE_API_URL}profile`, {
+                fetch(`${import.meta.env.VITE_PUBLIC_URL}profile`, {
                     method: "POST",
                     headers: {
                         accept: "application/json",
@@ -250,7 +250,7 @@ const DiscoverUserCards = forwardRef(({ item, index, isDecibel, userData, goProf
                     user_2: userItem?.user_id,
                 };
 
-                fetch(`${import.meta.env.VITE_API_URL}profile`, {
+                fetch(`${import.meta.env.VITE_PUBLIC_URL}profile`, {
                     method: "POST",
                     headers: {
                         accept: "application/json",

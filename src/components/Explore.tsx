@@ -21,7 +21,7 @@ const Explore = ({ setPopupExplore }: props) => {
       user_2: id,
     };
     // console.log(obj);
-    fetch(`${import.meta.env.VITE_API_URL}profile`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}profile`, {
       method: "POST",
       headers: {
         accept: "application/json",
@@ -50,7 +50,7 @@ const Explore = ({ setPopupExplore }: props) => {
     };
 
     // console.log(obj);
-    fetch(`${import.meta.env.VITE_API_URL}profile`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}profile`, {
       method: "POST",
       headers: {
         accept: "application/json",
@@ -79,7 +79,7 @@ const Explore = ({ setPopupExplore }: props) => {
       limit: 10,
     };
 
-    fetch(`${import.meta.env.VITE_API_URL}profile`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}profile`, {
       method: "POST",
       headers: {
         accept: "application/json",

@@ -44,6 +44,7 @@ interface Props {
   closeToggle?: (b: boolean) => void;
   setHandleGP?: (b: boolean) => void;
   chatPostID?: string;
+  handleGP?: boolean;
 }
 type LikeType = "" | "Like" | "UnLike";
 const PostDetails: FC<Props> = ({
@@ -53,6 +54,7 @@ const PostDetails: FC<Props> = ({
   closeToggle = () => false,
   setHandleGP = () => false,
   chatPostID,
+  handleGP = false,
 }) => {
   const [viewStatus, setViewStatus] = useState<viewType>("");
 
@@ -148,7 +150,7 @@ const PostDetails: FC<Props> = ({
       post_id: value?.post_id || chatPostID,
       user_id: user?.data?.user_id,
     };
-    fetch(`${import.meta.env.VITE_API_URL}post`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}post`, {
       method: "POST",
       headers: {
         accept: "application/json",
@@ -193,7 +195,7 @@ const PostDetails: FC<Props> = ({
       limit: limit,
     };
     isRef && setPageNoComment(1);
-    fetch(`${import.meta.env.VITE_API_URL}post`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}post`, {
       method: "POST",
       headers: {
         accept: "application/json",
@@ -238,7 +240,7 @@ const PostDetails: FC<Props> = ({
         comment: comment,
         user_id: user.data.user_id,
       };
-      fetch(`${import.meta.env.VITE_API_URL}post`, {
+      fetch(`${import.meta.env.VITE_PUBLIC_URL}post`, {
         method: "POST",
         headers: {
           accept: "application/json",
@@ -281,7 +283,7 @@ const PostDetails: FC<Props> = ({
       comment_id: commentID,
       user_id: user.data.user_id,
     };
-    fetch(`${import.meta.env.VITE_API_URL}post`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}post`, {
       method: "POST",
       headers: {
         accept: "application/json",
@@ -319,7 +321,7 @@ const PostDetails: FC<Props> = ({
       limit: limit,
     };
     isRef && setPageNo(1);
-    fetch(`${import.meta.env.VITE_API_URL}post`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}post`, {
       method: "POST",
       headers: {
         accept: "application/json",
@@ -363,7 +365,7 @@ const PostDetails: FC<Props> = ({
       user_id: user.data.user_id,
     };
 
-    fetch(`${import.meta.env.VITE_API_URL}post`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}post`, {
       method: "POST",
       headers: {
         accept: "application/json",
@@ -413,7 +415,7 @@ const PostDetails: FC<Props> = ({
           }
         });
       })
-      .catch((e) => {        
+      .catch((e) => {
         setLikeToggle(prev === "0" ? "1" : "0");
         hasNextPage.current = false;
       });
@@ -426,7 +428,7 @@ const PostDetails: FC<Props> = ({
       post_id: value?.post_id || chatPostID,
       user_id: user?.data?.user_id,
     };
-    fetch(`${import.meta.env.VITE_API_URL}bookmark`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}bookmark`, {
       method: "POST",
       headers: {
         accept: "application/json",
@@ -473,7 +475,7 @@ const PostDetails: FC<Props> = ({
       search: debounceVal,
     };
     isRef && setPageNoUser(1);
-    fetch(`${import.meta.env.VITE_API_URL}user`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}user`, {
       method: "POST",
       headers: {
         accept: "application/json",
@@ -515,7 +517,7 @@ const PostDetails: FC<Props> = ({
       user_id: user.data.user_id,
     };
 
-    fetch(`${import.meta.env.VITE_API_URL}post`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}post`, {
       method: "POST",
       headers: {
         accept: "application/json",
@@ -548,7 +550,7 @@ const PostDetails: FC<Props> = ({
       user_id: user.data.user_id,
     };
 
-    fetch(`${import.meta.env.VITE_API_URL}post`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}post`, {
       method: "POST",
       headers: {
         accept: "application/json",
@@ -700,6 +702,7 @@ const PostDetails: FC<Props> = ({
           setPostPopup={setPostPopup}
           closeToggle={closeToggle}
           setHandleGP={setHandleGP}
+          handleGP={handleGP}
         />
       )}
       <div
@@ -764,7 +767,7 @@ const PostDetails: FC<Props> = ({
                             onClick={handleToggleSound}
                           />
                         )}
-                        <video                          
+                        <video
                           preload='auto'
                           loop
                           autoPlay

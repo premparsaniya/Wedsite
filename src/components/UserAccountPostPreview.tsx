@@ -41,7 +41,7 @@ const UserAccountPostPreview = () => {
       user_id: user.data.user_id,
     };
 
-    fetch(`${import.meta.env.VITE_API_URL}post`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}post`, {
       method: "POST",
       headers: {
         accept: "application/json",
@@ -75,7 +75,7 @@ const UserAccountPostPreview = () => {
       user_id: user.data.user_id,
     };
 
-    fetch(`${import.meta.env.VITE_API_URL}post`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}post`, {
       method: "POST",
       headers: {
         accept: "application/json",
@@ -112,7 +112,7 @@ const UserAccountPostPreview = () => {
     };
 
     objEdit
-      ? fetch(`${import.meta.env.VITE_API_URL}post`, {
+      ? fetch(`${import.meta.env.VITE_PUBLIC_URL}post`, {
         method: "POST",
         headers: {
           accept: "application/json",
@@ -131,7 +131,7 @@ const UserAccountPostPreview = () => {
           }
         });
       })
-      : fetch(`${import.meta.env.VITE_API_URL}post`, {
+      : fetch(`${import.meta.env.VITE_PUBLIC_URL}post`, {
         method: "POST",
         headers: {
           accept: "application/json",
@@ -164,7 +164,7 @@ const UserAccountPostPreview = () => {
       user_id: user.data.user_id,
       report: e,
     };
-    fetch(`${import.meta.env.VITE_API_URL}post`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}post`, {
       method: "POST",
       headers: {
         accept: "application/json",
@@ -199,7 +199,7 @@ const UserAccountPostPreview = () => {
       user_id: user.data.user_id,
     };
 
-    fetch(`${import.meta.env.VITE_API_URL}post`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}post`, {
       method: "POST",
       headers: {
         accept: "application/json",

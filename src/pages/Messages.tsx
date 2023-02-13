@@ -84,7 +84,7 @@ function Messages() {
       sender_user_name: user?.data?.name,
       user_id: user?.data?.user_id,
     };
-    fetch(`${import.meta.env.VITE_API_URL}user`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}user`, {
       method: "POST",
       headers: {
         accept: "application/json",

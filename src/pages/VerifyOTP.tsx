@@ -23,7 +23,7 @@ const VerifyOTP = () => {
         };
         setMyLoading(true);
 
-        fetch(`${import.meta.env.VITE_API_URL}login`, {
+        fetch(`${import.meta.env.VITE_PUBLIC_URL}login`, {
             method: "POST",
             headers: {
                 Accept: "application/Json",

@@ -2,6 +2,7 @@ import { Save, DefaultImg, Like, Chat, InstaLogo, cameraLogo, Send, Locklc, arro
 
 // ---------------- IMG ----------------
 import STATE_BLACK_LOGO from "./image/STATE_image/state_black_logo.jpeg";
+import DEFAULT_IMG from "./image/STATE_image/sample_default.jpeg";
 
 // ---------------- PNG ----------------
 
@@ -95,7 +96,7 @@ export {
   WHITE_EYE_ICON,
   WHITE_BOOKMARK_ICON,
   WHITE_MORE_ICON,
-
+  DEFAULT_IMG,
   ADD_ICON,
   FILE_INPUT_ICON,
   MSG_ICON,

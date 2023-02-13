@@ -39,11 +39,11 @@ function Discover() {
   const [handleFilter, setHandleFilter] = useState<boolean>(false);
   const [postData, setPostData] = useState<any>([]);
   const [selectedValue, setSelectedValue] = useState<string>("");
-
+  const [handleGP, setHandleGP] = useState<boolean>(false);
   const [userNumber, setUserNumber] = useState<any>();
   const [videoNumber, setVideoNumber] = useState<any>();
 
-  const [visible, setVisible] = useState<boolean>(false);
+  // const [visible, setVisible] = useState<boolean>(false);
   const [toggleDetails, setToggleDetails] = useState<boolean>(false);
   const [postDetailsState, setPostDetailsState] = useState<any>({});
 
@@ -58,19 +58,14 @@ function Discover() {
 
   const limit = 10;
 
-
-
-  // useEffect(() => {
-  // getAllUsers();
-  // getUserCount();
-  // getPostList();
-  // }, [pageNo]);
+  useEffect(() => {
+    getUserCount();
+  }, [handleGP])
 
   useEffect(() => {
     getAllUsers();
-    getUserCount();
     getPostList();
-  }, [debounceVal, selectedValue, pageNo]);
+  }, [debounceVal, selectedValue, pageNo, segment , handleGP]);
 
   const getAllUsers = () => {
     setLoading(true);
@@ -80,7 +75,7 @@ function Discover() {
       limit: limit,
       search: debounceVal,
     };
-    fetch(`${import.meta.env.VITE_API_URL}user`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}user`, {
       method: "POST",
       headers: {
         accept: "application/json",
@@ -127,7 +122,7 @@ function Discover() {
     const obj = {
       method: "get_post_count",
     };
-    fetch(`${import.meta.env.VITE_API_URL}post`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}post`, {
       method: "POST",
       headers: {
         accept: "application/json",
@@ -157,13 +152,11 @@ function Discover() {
     (post: any) => {
       if (loading) return;
       if (intObserver.current) intObserver.current.disconnect();
-
       intObserver.current = new IntersectionObserver((posts) => {
         if (posts[0].isIntersecting && hasNextPage) {
           setPageNo((prev) => prev + 1);
         }
       });
-
       if (post) intObserver.current.observe(post);
     },
     [loading, hasNextPage]
@@ -175,7 +168,7 @@ function Discover() {
       if (loading) return;
       if (intObserverForVid.current) intObserverForVid.current.disconnect();
 
-      intObserverForVid.current = new IntersectionObserver((posts) => {        
+      intObserverForVid.current = new IntersectionObserver((posts) => {
         if (posts[0].isIntersecting && hasNextPage) {
           setPageNo((prev) => prev + 1);
         }
@@ -194,7 +187,7 @@ function Discover() {
       search: debounceVal,
       filter_by: selectedValue,
     };
-    fetch(`${import.meta.env.VITE_API_URL}post`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}post`, {
       method: "POST",
       headers: {
         accept: "application/json",
@@ -230,9 +223,9 @@ function Discover() {
   };
 
   const showPostDetailsClick = (value: any) => {
-    navigate(`/postdetails/${value?.post_id}`, { state: { value: value } })
-    // setPostDetailsState(value);
-    // setToggleDetails(!toggleDetails);
+    // navigate(`/postdetails/${value?.post_id}`, { state: { value: value } })
+    setPostDetailsState(value);
+    setToggleDetails(!toggleDetails);
   };
 
   const goProfile = (id: number) => {
@@ -435,17 +428,15 @@ function Discover() {
           </div>
         </div>
       </div>
-      {/* {toggleDetails && (
+      {toggleDetails && (
         <PostDetails
           key={postDetailsState?.post_id}
-          visible={visible}
-          onClose={() => {
-            setVisible(!visible), setToggleDetails(!toggleDetails);
-          }}
           value={postDetailsState}
-          getPostList={getPostList}
+          closeToggle={setToggleDetails}
+          setHandleGP={setHandleGP}
+          handleGP={handleGP}
         />
-      )} */}
+      )}
     </section>
   );
 }

@@ -42,7 +42,7 @@ const SignUp = () => {
     };
 
     setMyLoading(true);
-    fetch(`${import.meta.env.VITE_API_URL}signup`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}signup`, {
       method: "POST",
       headers: {
         Accept: "application/json",

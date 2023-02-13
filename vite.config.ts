@@ -13,10 +13,10 @@ export default defineConfig({
   },
   server: {
     headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "PUT, GET, HEAD, POST, DELETE, OPTIONS",
-      "Cross-Origin-Opener-Policy": "same-origin",
-      "Cross-Origin-Embedder-Policy": "require-corp",
+      // "Access-Control-Allow-Origin": "*",
+      // "Access-Control-Allow-Methods": "PUT, GET, HEAD, POST, DELETE, OPTIONS",
+      // "Cross-Origin-Opener-Policy": "same-origin",
+      // "Cross-Origin-Embedder-Policy": "require-corp",
     },
   },
   // server: {

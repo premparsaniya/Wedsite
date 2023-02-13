@@ -14,13 +14,11 @@ function App() {
 
   // const Web3ReactProviderReloaded = createWeb3ReactRoot('anotherOne')
 
-
-
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/' >
       <Web3ReactProvider getLibrary={getLibrary}>
         {/* <Web3ReactProviderReloaded getLibrary={getLibrary}> */}
-        <AppRoute />
+        <AppRoute />        
         {/* </Web3ReactProviderReloaded> */}
       </Web3ReactProvider>
     </BrowserRouter>

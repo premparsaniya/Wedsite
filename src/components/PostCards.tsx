@@ -9,6 +9,7 @@ import {
   BOOKMARK,
   BOOKMARK_FILL_IC,
   COMMENT_ICON,
+  DEFAULT_IMG,
   EYE_ICON,
   HEART_ICON,
   MORE_ICON,
@@ -66,7 +67,7 @@ const PostCards = ({ val, index, getPostList }: Props) => {
       user_id: user?.data?.user_id,
     };
 
-    fetch(`${import.meta.env.VITE_API_URL}post`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}post`, {
       method: "POST",
       headers: {
         accept: "application/json",
@@ -136,7 +137,7 @@ const PostCards = ({ val, index, getPostList }: Props) => {
       post_id: val?.post_id,
       user_id: user?.data?.user_id,
     };
-    fetch(`${import.meta.env.VITE_API_URL}bookmark`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}bookmark`, {
       method: "POST",
       headers: {
         accept: "application/json",
@@ -253,7 +254,7 @@ const PostCards = ({ val, index, getPostList }: Props) => {
       <div className="home-img">
         {likeToggle !== "" && <img src={likeToggle === "Like" ? RED_HEART_ICON : UNLIKE_ICON} alt="RED_HEART_ICON" className="big-like absolute w-20" />}
         <img
-          src={val?.att_thumb}
+          src={val?.att_thumb || DEFAULT_IMG }
           className="post-img"
           crossOrigin="anonymous"
           onClick={() => handleClick()}

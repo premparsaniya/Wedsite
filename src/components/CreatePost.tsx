@@ -12,10 +12,10 @@ import {
 } from "~/assets";
 import { UserIcon, Discard, Loading, BTN, SpinningLoader } from ".";
 import { setPostList, App_state } from "~/reduxState";
-import { useParams } from "react-router-dom";
-import { createFFmpeg, fetchFile } from "@ffmpeg/ffmpeg";
+import { useNavigate, useParams } from "react-router-dom";
+// import { createFFmpeg, fetchFile } from "@ffmpeg/ffmpeg";
 
-const ffmpeg = createFFmpeg({ log: true });
+// const ffmpeg = createFFmpeg({ log: true });
 
 type props = {
   setPopupPost: any;
@@ -25,6 +25,7 @@ type props = {
 
 function CreatePost({ setPopupPost, popupPost }: props) {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { id } = useParams();
   const { user } = useSelector((state: any) => state.UserLogin);
   // const pageNumber = useSelector((s: App_state) => s?.pageReducer);
@@ -47,16 +48,16 @@ function CreatePost({ setPopupPost, popupPost }: props) {
   const audioRef = useRef<HTMLAudioElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const token = user?.token;
- 
-  const [ready, setReady] = useState(false);
+
+  // const [ready, setReady] = useState(false);
 
 
   const [convertedData, setConvertedData] = useState<any>(null)
 
-  async function load() { await ffmpeg.load(); setReady(true); }
-  useEffect(() => {
-    ffmpeg.isLoaded() ? setReady(true) : load();
-  }, [])
+  // async function load() { await ffmpeg.load(); setReady(true); }
+  // useEffect(() => {
+  //   ffmpeg.isLoaded() ? setReady(true) : load();
+  // }, [])
 
   const checkLength = (e: ChangeEvent<HTMLTextAreaElement>) => {
     e.target.value.length < 251 && setCaption(e.target.value);
@@ -167,35 +168,36 @@ function CreatePost({ setPopupPost, popupPost }: props) {
   };
 
   // ---------------------- marge audio in video click -----------------------
-  console.log("audioUrlBlob", audioUrlBlob)
+  // console.log("audioUrlBlob", audioUrlBlob)
 
-  const mergeAudioAndVideo = async () => {
-    setAVLoading(true);
-    let width = (videoRef?.current?.clientWidth || 0);
-    let height = (videoRef?.current?.clientHeight || 0);
-    if ((videoRef?.current?.clientWidth || 0) < 720 || (videoRef?.current?.clientHeight || 0) < 720) {
-      width = (videoRef?.current?.clientWidth || 0) * 2;
-      height = (videoRef?.current?.clientHeight || 0) * 2;
-    }
-    ffmpeg.FS('writeFile', 'video.mp4', await fetchFile(videoData || imgPreviewUrl));
-    ffmpeg.FS('writeFile', 'audio.m4a', await fetchFile(audioUrlBlob));
-    
-    // change encoding format & make compatible for HEVC
-    await ffmpeg.run('-i', 'video.mp4', '-stream_loop', '-1', '-i', 'audio.m4a', '-shortest', '-map', '0:v:0', '-map', '1:a:0', '-c:v', 'libx264', '-c:a', 'aac', '-b:a', '192k', '-y', '-s', `${width}*${height}`, '-preset', 'ultrafast', 'output.mp4').then(() => {
-      let data = ffmpeg.FS('readFile', 'output.mp4');
-      setAVLoading(false);
-      let file = new File([new Uint8Array(data.buffer)], 'output.mp4', { type: 'video/mp4' });
-      setConvertedData(file);
-      let reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onloadend = () => {
-        typeof reader.result === "string" && setImgPreviewUrl(reader.result);
-      };
-    })
-      .catch(() => {
-        setAVLoading(false);
-      });
-  }
+  // const mergeAudioAndVideo = async () => {
+  //   setAVLoading(true);
+  //   let width = (videoRef?.current?.clientWidth || 0);
+  //   let height = (videoRef?.current?.clientHeight || 0);
+  //   if ((videoRef?.current?.clientWidth || 0) < 720 || (videoRef?.current?.clientHeight || 0) < 720) {
+  //     width = (videoRef?.current?.clientWidth || 0) * 2;
+  //     height = (videoRef?.current?.clientHeight || 0) * 2;
+  //   }
+
+  //   ffmpeg.FS('writeFile', 'video.mp4', await fetchFile(videoData || imgPreviewUrl));
+  //   ffmpeg.FS('writeFile', 'audio.m4a', await fetchFile(audioUrlBlob));
+
+  //   // change encoding format & make compatible for HEVC
+  //   await ffmpeg.run('-i', 'video.mp4', '-stream_loop', '-1', '-i', 'audio.m4a', '-shortest', '-map', '0:v:0', '-map', '1:a:0', '-c:v', 'libx264', '-c:a', 'aac', '-b:a', '192k', '-y', '-s', `${width}*${height}`, '-preset', 'ultrafast', 'output.mp4').then(() => {
+  //     let data = ffmpeg.FS('readFile', 'output.mp4');
+  //     setAVLoading(false);
+  //     let file = new File([new Uint8Array(data.buffer)], 'output.mp4', { type: 'video/mp4' });
+  //     setConvertedData(file);
+  //     let reader = new FileReader();
+  //     reader.readAsDataURL(file);
+  //     reader.onloadend = () => {
+  //       typeof reader.result === "string" && setImgPreviewUrl(reader.result);
+  //     };
+  //   })
+  //     .catch(() => {
+  //       setAVLoading(false);
+  //     });
+  // }
 
   // ------------------- create post button click -------------------
 
@@ -209,7 +211,7 @@ function CreatePost({ setPopupPost, popupPost }: props) {
       formDataNew.append("description", caption);
       formDataNew.append("user_id", user.data.user_id);
 
-      await fetch(`${import.meta.env.VITE_API_URL}post`, {
+      await fetch(`${import.meta.env.VITE_PUBLIC_URL}post`, {
         method: "POST",
         headers: {
           version: "1.0.0",
@@ -223,6 +225,7 @@ function CreatePost({ setPopupPost, popupPost }: props) {
               setLoading(false);
               setPopupPost(!popupPost);
               fetchPostData();
+              location.pathname !== "/" && navigate(`/userprofile/${user?.data?.user_id}`)
             } else {
               setLoading(false);
               setPopupPost(!popupPost);
@@ -264,7 +267,7 @@ function CreatePost({ setPopupPost, popupPost }: props) {
       limit: 10,
       user_id: user.data.user_id,
     };
-    fetch(`${import.meta.env.VITE_API_URL}post`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}post`, {
       method: "POST",
       headers: {
         accept: "application/json",
@@ -291,31 +294,31 @@ function CreatePost({ setPopupPost, popupPost }: props) {
   };
 
   // ------------------------ get files (audio)---------------------------------
-  const handleAudioScreen = () => {
-    setAudioS(!audioS);
-    const obj = {
-      method: "get_files",
-      limit: "10",
-      page: "1",
-    };
-    fetch(`${import.meta.env.VITE_API_URL}file`, {
-      method: "POST",
-      headers: {
-        accept: "application/json",
-        version: "1.0.0",
-        token: `Bearer ${token}`,
-      },
-      body: JSON.stringify(obj),
-    }).then((res) => {
-      res.json().then((response) => {
-        if (response.status === 1) {
-          setAudioList(response.data);
-        } else {
-          // console.log("else", response);          
-        }
-      });
-    });
-  };
+  // const handleAudioScreen = () => {
+  //   setAudioS(!audioS);
+  //   const obj = {
+  //     method: "get_files",
+  //     limit: "10",
+  //     page: "1",
+  //   };
+  //   fetch(`${import.meta.env.VITE_PUBLIC_URL}file`, {
+  //     method: "POST",
+  //     headers: {
+  //       accept: "application/json",
+  //       version: "1.0.0",
+  //       token: `Bearer ${token}`,
+  //     },
+  //     body: JSON.stringify(obj),
+  //   }).then((res) => {
+  //     res.json().then((response) => {
+  //       if (response.status === 1) {
+  //         setAudioList(response.data);
+  //       } else {
+  //         // console.log("else", response);          
+  //       }
+  //     });
+  //   });
+  // };
 
   // ---------------------- handle audio play - pause -------------------
 
@@ -328,15 +331,15 @@ function CreatePost({ setPopupPost, popupPost }: props) {
         // setAudioUrlBlob(item?.file)        
         setPlayID(item.id);
         setAudioUrl(item.file);
-        setTimeout(() => audioRef.current?.play(), 500);        
+        setTimeout(() => audioRef.current?.play(), 500);
       }
     } else {
       audioRef.current?.pause();
     }
   };
-  
+
   // --------- get info of video -------------------
- 
+
   const getInfo = (e: any) => {
     // console.log("info -->", e)
   }
@@ -393,11 +396,11 @@ function CreatePost({ setPopupPost, popupPost }: props) {
                         <video crossOrigin="anonymous" className="h-[86vh] w-full object-contain max-h-[86vh]" ref={videoRef} autoPlay onLoadedMetadata={getInfo} src={imgPreviewUrl as string} >
                           {/* <source src={imgPreviewUrl as string} type="video/mp4" /> */}
                         </video>
-                        <img
+                        {/* <img
                           src={MUSIC_LIST_ICON}
                           alt="MUSIC_LIST_ICON"
                           className="volume-btn"
-                          onClick={handleAudioScreen} />
+                          onClick={handleAudioScreen} /> */}
                       </>
                     ) : (
                       <>
@@ -427,16 +430,16 @@ function CreatePost({ setPopupPost, popupPost }: props) {
                 <>
                   <div className="cp-audio-div">
                     <div className="cp-u">
-                      <div className="cp-back-arr" onClick={handleAudioScreen}>
+                      <div className="cp-back-arr"/*  onClick={handleAudioScreen} */>
                         <img src={BACK_ICON} alt="back" />
                       </div>
                       <div className="cp-UName flex justify-between">
                         <span className="cp-audio-title">Select Audio </span>
-                        <button className="add-audio mr-5 text-[18px] pr-2 pl-2 rounded-md" disabled={AVLoading} onClick={() => mergeAudioAndVideo()} > Add </button>                       
+                        <button className="add-audio mr-5 text-[18px] pr-2 pl-2 rounded-md" disabled={AVLoading} /* onClick={() => mergeAudioAndVideo()} */ > Add </button>
                       </div>
                     </div>
                     <div className="audio-listing-div">
-                      {audioList.map((value: any, index: number) => {
+                      {/* {audioList.map((value: any, index: number) => {
                         return (
                           <Fragment key={index}>
                             <div className={`audio-map-div px-6 cursor-pointer ${value?.file === audioUrlBlob ? 'bg-gray-100' : ""}`} onClick={() => selectAudioClick(value)} >
@@ -473,11 +476,10 @@ function CreatePost({ setPopupPost, popupPost }: props) {
                             </div>
                           </Fragment>
                         );
-                      })}
+                      })} */}
                     </div>
-                    <audio ref={audioRef} src={audioUrl}>
-                      {/* <source key={audioUrl} src={audioUrl} type="audio/wav" /> */}
-                    </audio>
+                    {/* <audio crossOrigin="anonymous" ref={audioRef} src={audioUrl}>                  
+                    </audio> */}
                   </div>
                 </>
               ) : (

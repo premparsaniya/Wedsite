@@ -1,18 +1,20 @@
 import { forwardRef } from "react";
+import { DEFAULT_IMG } from "~/assets";
 
 type Props = {
     val: any;
     index: number;
     showPostDetailsClick: (a: any) => void
 };
-const GetAllPostContent = forwardRef(({ val, index, showPostDetailsClick }: Props, ref: any) => {
+const GetAllPostContent = forwardRef(({ val, index, showPostDetailsClick }: Props, ref: any) => {    
     const postCardBody = (
         <div key={index} onClick={() => showPostDetailsClick(val)} >
             <article className="post bg-gray-100 text-white relative pb-full shadow-md  md:mb-6">
                 <img
-                    src={val.att_thumb}
+                    src={val?.att_thumb || DEFAULT_IMG}
                     alt="IMG"
                     className="w-full h-full object-cover aspect-square relative"
+                    crossOrigin="anonymous"
                 />
             </article>
         </div>

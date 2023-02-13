@@ -30,7 +30,7 @@ const Settings = () => {
       profile: checked === true ? "0" : "1",
       notification: checkedNot === true ? "1" : "0",
     };
-    fetch(`${import.meta.env.VITE_API_URL}profile`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}profile`, {
       method: "POST",
       headers: {
         accept: "application/json",
@@ -74,7 +74,7 @@ const Settings = () => {
       user_id: user.data.user_id,
     };
 
-    fetch(`${import.meta.env.VITE_API_URL}profile`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}profile`, {
       method: "POST",
       headers: {
         accept: "application/json",

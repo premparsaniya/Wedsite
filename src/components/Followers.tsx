@@ -62,7 +62,7 @@ const Followers = ({
       limit: limit,
     };
 
-    fetch(`${import.meta.env.VITE_API_URL}profile`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}profile`, {
       method: "POST",
       headers: {
         accept: "application/json",

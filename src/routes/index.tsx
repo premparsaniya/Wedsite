@@ -65,7 +65,7 @@ const Index = () => {
               <Route path="/signup" element={<SignUp />} />
               <Route path="/reset" element={<ForgotPassword />} />
               <Route path="/*" element={<Error />} />
-              <Route path="/" element={<Home />} />              
+              <Route path="/" element={<Home />} />
               <Route path="/playground" element={<Playground />} />
               <Route path="/userprofile/:id" element={<UserProfile />} />
               <Route path="/uapp/:id" element={<UserAccountPostPreview />} />
@@ -84,7 +84,7 @@ const Index = () => {
               <Route path="/VerifyOTP" element={<VerifyOTP />} />
               <Route path="/setPassword" element={<SetPassword />} />
               <Route path="/messages" element={<Messages />} />
-              <Route path="/messages/:chatroomId" element={<Messages />} />              
+              <Route path="/messages/:chatroomId" element={<Messages />} />
               <Route path="/wallet" element={<Wallet />} />
               <Route path="/wallet/create" element={<CreateWallet />} />
               <Route path="/wallet/send-state" element={<SendSTATE />} />
@@ -108,9 +108,9 @@ const Index = () => {
               <Route
                 path="/Terms_and_Conditions"
                 element={<TermsConditions />}
-                />
+              />
 
-                {/* <Route path="*" element={<Error />} /> */}
+              {/* <Route path="*" element={<Error />} /> */}
               {/* <Route path="/" element={<Home />} /> */}
               {/* <Route path="/userprofile" element={<Navigate to="/login" />} /> */}
               {/* <Route path="/createpost" element={<Navigate to="/login" />} /> */}

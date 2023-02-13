@@ -70,7 +70,7 @@ const EdProfile = () => {
     formDataNew.append("user_id", id as string);
 
     setMyLoading(true);
-    fetch(`${import.meta.env.VITE_API_URL}profile`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}profile`, {
       method: "POST",
       headers: {
         //   'Content-Type': 'application/json',

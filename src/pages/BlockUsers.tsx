@@ -19,7 +19,7 @@ const BlockUsers = () => {
       method: "block_user_list",
     };
     setLoading(true);
-    fetch(`${import.meta.env.VITE_API_URL}user`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}user`, {
       method: "POST",
       headers: {
         accept: "application/json",
@@ -47,7 +47,7 @@ const BlockUsers = () => {
       blocked_user: blockUserId,
     };
     setLoading(true);
-    fetch(`${import.meta.env.VITE_API_URL}user`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}user`, {
       method: "POST",
       headers: {
         accept: "application/json",

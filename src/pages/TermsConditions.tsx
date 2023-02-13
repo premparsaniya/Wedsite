@@ -15,7 +15,7 @@ function TermsConditions() {
       page_id: 3,
     };
     setLoading(true);
-    fetch(`${import.meta.env.VITE_API_URL}cms`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}cms`, {
       method: "POST",
       headers: {
         accept: "application/json",

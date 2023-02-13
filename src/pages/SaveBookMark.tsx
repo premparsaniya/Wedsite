@@ -41,7 +41,7 @@ const SaveBookMark = () => {
         bookmark: 1,
       },
     };
-    fetch(`${import.meta.env.VITE_API_URL}post`, {
+    fetch(`${import.meta.env.VITE_PUBLIC_URL}post`, {
       method: "POST",
       headers: {
         accept: "application/json",
